@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState ,useEffect} from "react";
 import "./App.css";
 import { Route, Redirect } from "react-router-dom";
 import Home from "./components/Home/Home";
@@ -16,7 +16,18 @@ import HospitalLogin from "./components/Hospital/HospitalLogin";
 import EMedCard from '../src/components/E-MedCard/EMedCard'
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-
+  useEffect(() => {
+    try{
+      if(localStorage.getItem('type')=="user"||localStorage.getItem('type')=="hospital")
+      {
+        setIsLoggedIn(true);
+      }
+    }
+    catch(err)
+    {
+      console.log(err);
+    }
+  }, [])
   const loginHandler = () => {
     setIsLoggedIn(true);
   };

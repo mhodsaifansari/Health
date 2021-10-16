@@ -3,6 +3,7 @@ import Card from "../UI/Card/Card";
 import axios from "axios";
 import { useState,useEffect } from "react/cjs/react.development";
 import download from "downloadjs";
+import Button from '../UI/Buttons/Button'
 function EMedCard({isLoggedIn}) {
   const [userData,setData]=useState('');
   useEffect(() => {
@@ -50,7 +51,7 @@ function EMedCard({isLoggedIn}) {
                     {userData.basic_medical_data.surgery.map((e)=>{
                        return  <p> name:{e.name}  happend: {e.date}</p>
                     })}
-                  <button onClick={(e)=>{
+                  <Button onClick={(e)=>{
                     axios.post('https://mhodsaifansari.pythonanywhere.com/card',{},{
                       headers:{
                         Authorization:`Bearer ${localStorage.getItem('access')}`
@@ -61,7 +62,7 @@ function EMedCard({isLoggedIn}) {
                       download(res.data,"ecard.pdf",content)
                     })
                     .catch((err)=>{console.log(err)})
-                  }}>Download Your E-ID</button>
+                  }}>Download Your E-ID</Button>
                   </>:<h3>Please <a href="../login">Login</a></h3> }
   </Card>);
 }
