@@ -9,6 +9,7 @@ import { useHistory } from "react-router";
 function HospitalLogin() {
   const [addhar, setaadhar] = useState("");
   const history=useHistory();
+  localStorage.clear();
   const loginHandler = () => {
    
     axios.post('https://mhodsaifansari.pythonanywhere.com/hospital/login-otp',{

@@ -41,7 +41,7 @@ const Home = () => {
       <main className={classes.content}>
         <Card>
           <section className={classes.intro}>
-            <Heading text="NAME OF OUR WEBSITE" />
+            <Heading text="E-health Information Database" />
             <p>
               In order to achieve the mission
             </p>

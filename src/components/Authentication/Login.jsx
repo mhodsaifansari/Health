@@ -10,6 +10,7 @@ import { Path } from "leaflet";
 function Login() {
   const [addhar, setaadhar] = useState("");
   const history=useHistory();
+  localStorage.clear();
   const loginHandler = () => {
     localStorage.setItem('aadhar',addhar)
     axios.post('https://mhodsaifansari.pythonanywhere.com/login-otp',{
