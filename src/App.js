@@ -9,6 +9,10 @@ import Signup from "./components/Authentication/Signup";
 import UserMedicalData from './components/userMedicalData/UserMedicalData';
 import Verify from "./components/Authentication/Verify";
 import User from "./components/User/User";
+import HospitalRegistration from "./components/Hospital/HospitalRegistration";
+import HospitalVerify from "./components/Hospital/HospitalVerify";
+import HospitalHome from "./components/Hospital/HospitalHome";
+import HospitalLogin from "./components/Hospital/HospitalLogin";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -46,6 +50,18 @@ function App() {
       </Route>
       <Route path="/user">
         <User isLoggedIn={isLoggedIn}></User>
+      </Route>
+      <Route path="/hospital/signup">
+        <HospitalRegistration></HospitalRegistration>
+      </Route>
+      <Route path="/hospital/verify">
+        <HospitalVerify toggleLoggedIn={loginHandler}></HospitalVerify>
+      </Route>
+      <Route path="/hospital/home">
+        {isLoggedIn==true?<HospitalHome></HospitalHome>:<HospitalLogin></HospitalLogin>}
+      </Route>
+      <Route path="/hospital/login">
+        <HospitalLogin></HospitalLogin>
       </Route>
     </div>
   );

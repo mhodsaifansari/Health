@@ -18,6 +18,9 @@ const Navbar = (props) => {
         <li>
           <a href="/map">MapStats</a>
         </li>
+        <li>
+          <a href="/hospital/login">Hospital?</a>
+        </li>
       </ul>
       <ul className={authLinksClasses}>
         <li>
