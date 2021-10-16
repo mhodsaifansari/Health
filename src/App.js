@@ -13,7 +13,7 @@ import HospitalRegistration from "./components/Hospital/HospitalRegistration";
 import HospitalVerify from "./components/Hospital/HospitalVerify";
 import HospitalHome from "./components/Hospital/HospitalHome";
 import HospitalLogin from "./components/Hospital/HospitalLogin";
-
+import EMedCard from '../src/components/E-MedCard/EMedCard'
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
@@ -41,7 +41,9 @@ function App() {
       <Route path="/map">
         <Map />
       </Route>
-
+      <Route path="/my-e-medcard">
+        <EMedCard isLoggedIn={isLoggedIn}></EMedCard>
+      </Route>
       <Route path="/verify">
         <Verify toggleLoggedIn={loginHandler} />
       </Route>

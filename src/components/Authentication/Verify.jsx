@@ -20,6 +20,7 @@ const Verify = (props) => {
       console.log(data.data);
       localStorage.setItem('access',`${data.data.access}`);
       props.toggleLoggedIn();
+      localStorage.setItem('type','user')
       history.push("/home");
     })
    .catch((err)=>{
