@@ -1,0 +1,18 @@
+
+
+.button-theme {
+  border: 1px solid var(--primary);
+  border-radius: 5px;
+  font-size: 15px;
+  padding: 5px 20px;
+  color: var(--primary);
+  margin: 5px;
+  background: none;
+  transition: color 0.2s;
+  outline: none;
+}
+
+.button-theme:hover {
+  color: var(--secondary);
+  cursor: pointer;
+}
